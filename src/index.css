@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --color-sena-green: #39A900;
+  --color-sena-dark: #00324D;
+  --color-sena-emerald: #1e7e00;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+@keyframes themeBlurPulse {
+  0% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  45% {
+    filter: blur(14px);
+    opacity: 0.92;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+.theme-blur-active {
+  animation: themeBlurPulse 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: filter, opacity;
+}
+
